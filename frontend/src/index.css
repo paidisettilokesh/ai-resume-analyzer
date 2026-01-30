@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-[#FBFDFF] text-slate-800 min-h-screen font-sans antialiased;
+    }
+}
+
+@layer components {
+
+    /* Main Background with subtle high-end gradients */
+    .main-bg {
+        @apply fixed inset-0 -z-10 overflow-hidden pointer-events-none;
+        background: radial-gradient(circle at 10% 10%, rgba(99, 102, 241, 0.03) 0%, transparent 40%),
+            radial-gradient(circle at 90% 90%, rgba(6, 182, 212, 0.03) 0%, transparent 40%),
+            #FBFDFF;
+    }
+
+    /* Premium Buttons */
+    .btn-primary {
+        @apply bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3.5 px-8 rounded-2xl shadow-xl shadow-indigo-100/50 transition-all active:scale-[0.98] flex items-center justify-center gap-3 border-b-4 border-indigo-800/20;
+    }
+
+    .btn-secondary {
+        @apply bg-white hover:bg-slate-50 text-slate-600 border border-slate-200 font-bold py-3.5 px-8 rounded-2xl shadow-sm transition-all active:scale-[0.98] flex items-center justify-center gap-3;
+    }
+
+    /* Glassmorphism Cards */
+    .card {
+        @apply bg-white/70 backdrop-blur-md rounded-[2.5rem] shadow-2xl shadow-slate-200/40 border border-white p-8 transition-all hover:shadow-indigo-100/60 hover:-translate-y-1;
+    }
+
+    /* Inputs */
+    .input-field {
+        @apply w-full bg-white/80 border border-slate-200 rounded-2xl px-5 py-4 outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/5 transition-all backdrop-blur-sm text-slate-700 placeholder:text-slate-400;
+    }
+
+    /* Navigation */
+    .nav-tabs-container {
+        @apply flex items-center gap-2 p-1.5 bg-white/50 backdrop-blur-md border border-white/50 rounded-[2rem] shadow-lg shadow-slate-200/30;
+    }
+
+    .nav-tab {
+        @apply flex items-center gap-2 px-5 py-2.5 rounded-[1.5rem] font-bold text-sm transition-all duration-300;
+    }
+
+    .nav-tab-active {
+        @apply bg-indigo-600 text-white shadow-lg shadow-indigo-200 scale-105;
+    }
+
+    .nav-tab-inactive {
+        @apply text-slate-500 hover:bg-white hover:text-indigo-600 hover:shadow-sm;
+    }
+
+    /* Text Gradients */
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-cyan-500 font-black;
+    }
+}
+
+/* Smooth Scrolling Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-slate-50 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-slate-200 rounded-full hover:bg-indigo-200 transition-colors border-2 border-slate-50;
+}
+
+/* Custom Animations */
+@keyframes softFade {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-soft-fade {
+    animation: softFade 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Glass Header Blur */
+.glass-header {
+    @apply fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100/50;
+}

@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.local
+.DS_Store
+dist/
+build/
+backend/uploads/
+*.log
+backend/data/*.json
+!backend/data/history.json.example
+!backend/data/users.json.example
+*.zip
+.vscode/
+*.txt
+backend/node_modules/
+frontend/node_modules/
