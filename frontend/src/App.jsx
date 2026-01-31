@@ -99,7 +99,8 @@ function App() {
     };
 
     // --- API CALLS ---
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
+    const backendUrl = import.meta.env.VITE_BACKEND_URL + '/api';
+
 
     const callApi = async (endpoint, formData, setter) => {
         setLoading(true);
